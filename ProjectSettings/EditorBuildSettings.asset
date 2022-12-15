@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HomeScreen.unity
+    path: Assets/Deck_Register_Folder/Scenes/HomeScreen.unity
     guid: d875930d65e074bd3944e0a2c7ae10af
   - enabled: 1
-    path: Assets/Scenes/DeckRegisterScene.unity
+    path: Assets/Deck_Register_Folder/Scenes/DeckRegisterScene.unity
     guid: 07b81c2b5379e464fb0d6356e53d2a90
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
