@@ -11,6 +11,14 @@ using System.IO;
 // どのボタンが押されたかを取得して、それに対応した写真の保存先に写真を保存する
 // 保存した場所から写真を取得してボタンの画像を変える？
 
+"""
+動き方
+Awake
+Start
+ボタン押した時
+OnPressShowPicker
+"""
+
 public class AddImage : MonoBehaviour
 {
     [SerializeField] private Unimgpicker imagePicker;
@@ -19,23 +27,31 @@ public class AddImage : MonoBehaviour
     public Sprite texture2;
 
     // ssImageに選択されているgameObjectを選択
+    // 2. 次にこいつ
     private void Start()
     {
         ssImage = gameObject.GetComponent<Image>();
+        Debug.Log("aa");
     }
 
     // imagePicker
+    // 1. 最初にこいつ
     private void Awake()
     {
         imagePicker.Completed += path => StartCoroutine(LoadImage(path, ssImage));
+        Debug.Log("bb");
+        // 保存先をなんとかしたい
     }
 
+    // 3. 次にこいつ
     public void OnPressShowPicker()
     {
         imagePicker.Show("Select Image", "unimgpicker", 512);
+        Debug.Log("cc");
     }
 
     // ここで、textureが一つしかないから全部同じ場所が書き変わるのかな？
+    // 
     private IEnumerator LoadImage(string path, Image output)
     {
         string url = "file://" + path;

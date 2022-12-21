@@ -275,19 +275,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 64190429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 64190431}
-        m_TargetAssemblyTypeName: AddImage, Assembly-CSharp
-        m_MethodName: OnPressShowPicker
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &64190429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,8 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25f386bf944ef448883085c643e44c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagePicker: {fileID: 2050427223}
-  ssImage: {fileID: 64190429}
+  imagePicker: {fileID: 0}
+  ssImage: {fileID: 0}
   texture: {fileID: 0}
   texture2: {fileID: 0}
 --- !u!1 &258768023
@@ -2152,17 +2140,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986988281}
   m_CullTransparentMesh: 1
---- !u!114 &2050427223 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11470950, guid: d404a7c743785496d9709917da87b8e3, type: 3}
-  m_PrefabInstance: {fileID: 1412694251}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e673e7642862948e29c760426f26905f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2073031997
 GameObject:
   m_ObjectHideFlags: 0
