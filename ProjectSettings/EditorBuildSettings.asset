@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Deck_Register_Folder/Scenes/DeckRegisterScene.unity
     guid: 07b81c2b5379e464fb0d6356e53d2a90
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/title/Scenes/TitleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
