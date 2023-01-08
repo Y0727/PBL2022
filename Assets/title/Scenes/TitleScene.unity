@@ -330,8 +330,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30B2\u30FC\u30E0\n\u958B\u59CB"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
-  m_sharedMaterial: {fileID: -7342415706404024152, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
+  m_sharedMaterial: {fileID: -3447792766451960972, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -718,8 +718,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30C7\u30C3\u30AD\n\u8A2D\u5B9A"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
-  m_sharedMaterial: {fileID: -7342415706404024152, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
+  m_sharedMaterial: {fileID: -3447792766451960972, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -853,15 +853,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u306A\u3093\u3067\u3082\u30BF\u30EF\u30FC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
-  m_sharedMaterial: {fileID: -7342415706404024152, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
+  m_sharedMaterial: {fileID: -3447792766451960972, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279435251
-  m_fontColor: {r: 0.95122725, g: 1, b: 0.07075471, a: 1}
+    rgba: 4279435071
+  m_fontColor: {r: 0.2481677, g: 1, b: 0.07058823, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 1.9584955}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1601,8 +1601,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
+  m_sharedMaterial: {fileID: -3447792766451960972, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1759,7 +1759,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481228117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1481228117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,8 +2185,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "    \u30E6\u30FC\u30B6\u30FC\u30CD\u30FC\u30E0\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
-  m_sharedMaterial: {fileID: -7342415706404024152, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
+  m_sharedMaterial: {fileID: -3447792766451960972, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
