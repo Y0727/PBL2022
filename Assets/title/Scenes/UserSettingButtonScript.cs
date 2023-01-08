@@ -9,6 +9,4 @@ public class UserSettingButtonScript : MonoBehaviour
 	{
 		SceneManager.LoadScene("UserSettingScene", LoadSceneMode.Single);
 	}
- 
-   
 }
