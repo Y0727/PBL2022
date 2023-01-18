@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 881869319}
   - component: {fileID: 881869318}
   - component: {fileID: 881869317}
-  - component: {fileID: 881869316}
+  - component: {fileID: 881869320}
   m_Layer: 5
   m_Name: GameSettingInfo
   m_TagString: Untagged
@@ -1444,18 +1444,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.15, y: 4.44}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &881869316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881869314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a752969fea7c0496283faebf3b9e0410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &881869317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,9 +1488,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 881869316}
-        m_TargetAssemblyTypeName: UserSettingButtonScript, Assembly-CSharp
-        m_MethodName: OnClickUserSettingButton
+      - m_Target: {fileID: 881869320}
+        m_TargetAssemblyTypeName: GameSettingTransition, Assembly-CSharp
+        m_MethodName: OnClickHomeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1550,6 +1538,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881869314}
   m_CullTransparentMesh: 1
+--- !u!114 &881869320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881869314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7b3621f5829462ea4b2f5746f46945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086239298
 GameObject:
   m_ObjectHideFlags: 0
