@@ -1129,7 +1129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 191}
+  m_AnchoredPosition: {x: 0, y: 249}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309023310
@@ -1154,15 +1154,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30A2\u30A4\u30B3\u30F3\u30FB\u540D\u524D"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
-  m_sharedMaterial: {fileID: -7342415706404024152, guid: 6b313a22a0f8c47008b05c507137ab20, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
+  m_sharedMaterial: {fileID: -3447792766451960972, guid: 723267f571d6044df9f2fcda01ddf583, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278252287
-  m_fontColor: {r: 1, g: 0.95010334, b: 0, a: 1}
+    rgba: 4281425147
+  m_fontColor: {r: 0.9843137, g: 0.36078432, b: 0.19215687, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 103.47641, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
