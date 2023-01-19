@@ -19,4 +19,9 @@ public class TitleScene: MonoBehaviour {
     {
         SceneManager.LoadScene("DeckRegisterScene");
     }
+
+    void OnclickToHomeButton()
+    {
+        SceneManager.LoadScene("VS_Ryu");
+    }
 }
