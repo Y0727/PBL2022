@@ -22,7 +22,7 @@ public class ToHome : MonoBehaviour
     public void OnClickToHomeButton()
     {
         Debug.Log("Doing");
-        //SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("TitleScene");
     }
 
 }
