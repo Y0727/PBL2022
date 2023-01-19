@@ -1158,6 +1158,7 @@ GameObject:
   - component: {fileID: 787185045}
   - component: {fileID: 787185044}
   - component: {fileID: 787185043}
+  - component: {fileID: 787185046}
   m_Layer: 5
   m_Name: DeckSettingButton
   m_TagString: Untagged
@@ -1229,7 +1230,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 787185044}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787185046}
+        m_TargetAssemblyTypeName: DeckRegisterTransition, Assembly-CSharp
+        m_MethodName: OnClickDeckRegisterButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &787185044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,6 +1281,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787185041}
   m_CullTransparentMesh: 1
+--- !u!114 &787185046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787185041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dd4919740e64ac989a79ca6837958d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871827354
 GameObject:
   m_ObjectHideFlags: 0
