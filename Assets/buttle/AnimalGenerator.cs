@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class AnimalGenerator : MonoBehaviour{
 
-    public GameObject[] animals;//どうぶつ取得配列
+    public GameObject[] animals=new GameObject[6];//どうぶつ取得配列
     public Camera mainCamera;//カメラ取得用変数
     public float pivotHeight = 3;//生成位置の基準
+    public float underLim = 0.8f;
 
     public static int animalNum = 0;//生成された動物の個数を保管
     public static bool isGameOver = false;//ゲームオーバー判定
@@ -17,12 +21,14 @@ public class AnimalGenerator : MonoBehaviour{
     public Button rotateButton;
     public Button RetryButton;
     public Button RetryButton02;
-
+    private bool isFinAnimals=false;
+    private bool firstGene=true;
 
     public bool isFall;//生成された動物が落下中か
 
     private void Start()
     {
+        
         Init();
     }
 
@@ -34,20 +40,26 @@ public class AnimalGenerator : MonoBehaviour{
         mainCamera=Camera.main;
         animalNum = 0;
         isGameOver = false;
+
         Animal.isMoves.Clear();//移動してる動物のリストを初期化
         StartCoroutine(StateReset());
         rotateButton = GameObject.Find ("Canvas/rotateButton").GetComponent<Button> ();
         RetryButton= GameObject.Find ("Canvas/GameOverUI/RetryButton").GetComponent<Button>();
         RetryButton02= GameObject.Find ("Canvas/GameOverUI/RetryButton02").GetComponent<Button>();
 
+
         RetryButton.enabled=false;
         RetryButton02.enabled=false;
+        
+        isFinAnimals=true;
+        isGene=false;
+
     }
 
     // 毎フレーム呼び出される(60fpsだったら1秒間に60回)
     void Update () {
-
-        if (isGameOver)
+        
+        if (isGameOver & isFinAnimals)
         {
             RetryButton.enabled=true;
             RetryButton02.enabled=true;
@@ -112,9 +124,12 @@ public class AnimalGenerator : MonoBehaviour{
         {
             yield return new WaitUntil(() => isFall);//落下するまで処理が止まる
             yield return new WaitForSeconds(0.1f);//少しだけ物理演算処理を待つ（ないと無限ループ）
+            
             isFall = false;
             isGene = false;
+
         }
+        
     }
     
     /// <summary>
@@ -129,8 +144,17 @@ public class AnimalGenerator : MonoBehaviour{
             mainCamera.transform.Translate(0,0.1f,0);//カメラを少し上に移動
             pivotHeight += 0.1f;//生成位置も少し上に移動
         }
-        geneAnimal = Instantiate(animals[Random.Range(0, animals.Length)], new Vector2(0, pivotHeight), Quaternion.identity);//回転せずに生成
+        if(firstGene==false){
+            if (underLim <= geneAnimal.transform.position.y & geneAnimal.transform.position.y < pivotHeight  ){
+                mainCamera.transform.position=new Vector3(0.0f,mainCamera.transform.position.y+2.2f,mainCamera.transform.position.z);
+                pivotHeight+=2.2f;
+                underLim+=2.2f;
+            }
+        }
+        
+        geneAnimal = Instantiate(Resources.Load<GameObject>("test"+Random.Range(0, 6).ToString()), new Vector2(0, pivotHeight), Quaternion.identity);//回転せずに生成
         geneAnimal.GetComponent<Rigidbody2D>().isKinematic = true;//物理挙動をさせない状態にする
+        firstGene=false;
     }
 
     /// <summary>
@@ -139,7 +163,10 @@ public class AnimalGenerator : MonoBehaviour{
     /// </summary>
     public void RotateAnimal()
     {
+        Debug.Log("rotate!");
+
         if(!isFall)
+            Debug.Log("rotate!2");
             geneAnimal.transform.Rotate(0,0,-30);//30度ずつ回転
     }
 

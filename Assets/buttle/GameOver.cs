@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
     private GameObject button_toStart;
     private GameObject button_retry_text;
     private GameObject button_toStart_text;
+    private GameObject button_rotate;
     private Image panel;
 
     private Button RetryButton;
@@ -40,14 +41,19 @@ public class GameOver : MonoBehaviour
     }
 
 
-    void OnTriggerExit2D(){
+    void OnTriggerExit2D(Collider2D other){
         Debug.Log("yes");
         
+    
+        Destroy(other.gameObject);
+
         GameObject obj = GameObject.Find ("GameManager");
         button_retry = GameObject.Find ("RetryButton");
         button_toStart = GameObject.Find ("RetryButton02");
         button_retry_text= GameObject.Find ("RetryButtonText");
         button_toStart_text = GameObject.Find ("RetryButton02Text");
+        button_rotate = GameObject.Find("rotateButton");
+
 
         OverText = GameObject.Find("GameOverText").GetComponent<TextMeshProUGUI>();
         text1=GameObject.Find("RetryButtonText").GetComponent<Text>();
@@ -67,6 +73,8 @@ public class GameOver : MonoBehaviour
         text1.color=new Color (0, 0, 0, 255);
         text2.color=new Color (0, 0, 0, 255);
         panel.color = new Color32 (0, 0, 0, 60);
+        button_rotate.GetComponent<Image>().color = new Color(255,255,255,0);
+
 
 
         /*ColorBlock cb = button_toStart.GetComponent<Button> ().colors;

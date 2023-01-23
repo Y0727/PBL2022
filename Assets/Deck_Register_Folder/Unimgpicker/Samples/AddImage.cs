@@ -4,55 +4,75 @@ using System.IO;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
-
-
-// 個人的に思ってるのは、一旦画像を読み込んでファイルの保存、
-// どのボタンが押されたかを取得して、それに対応した写真の保存先に写真を保存する
-// 保存した場所から写真を取得してボタンの画像を変える？
+using UnityEditor;
 
 public class AddImage : MonoBehaviour
 {
     [SerializeField] private Unimgpicker imagePicker;
     [SerializeField] private Image ssImage;
     public Texture2D texture;
-    public Sprite texture2;
+    public static Sprite texture2;
+    IEnumerator routine;
+    public int pic_num;
 
-    // ssImageに選択されているgameObjectを選択
-    private void Start()
-    {
-        ssImage = gameObject.GetComponent<Image>();
-    }
-
-    // imagePicker
     private void Awake()
     {
-        imagePicker.Completed += path => StartCoroutine(LoadImage(path, ssImage));
+        
     }
 
-    public void OnPressShowPicker()
+    private void Start()
     {
-        imagePicker.Show("Select Image", "unimgpicker", 512);
+        if (!ssImage)
+        {
+            ssImage = gameObject.GetComponent<Image>();
+        }
+    }
+    
+    
+    
+
+    public void OnPressShowPicker(int pic_num)
+    {
+
+        imagePicker.Completed += path => StartCoroutine(LoadImage(path, ssImage,pic_num));
+        imagePicker.Show("Select Image", "unimgpicker", 512); //1024��512�ɕύX
+        this.pic_num=pic_num;
+        Invoke("callback",1.0f);
+        
     }
 
-    // ここで、textureが一つしかないから全部同じ場所が書き変わるのかな？
-    private IEnumerator LoadImage(string path, Image output)
+    public void callback(){
+
+        Debug.Log("1banme?");
+        byte[] bytes = texture2.texture.EncodeToPNG();
+        print("FileIS"+pic_num.ToString());
+        File.WriteAllBytes("Assets/Deck_Register_Folder/Resources/a_test"+pic_num.ToString()+".png",bytes);
+        print("FileSaveFin");        
+        AssetDatabase.Refresh();
+    }
+    
+
+    private IEnumerator LoadImage(string path, Image output,int pic_num)
     {
         string url = "file://" + path;
         WWW www = new WWW(url);
         yield return www;
+
         texture = www.texture;
-        Debug.Log(texture);
         // �܂����T�C�Y
         int _CompressRate = TextureCompressionRate.TextureCompressionRatio(texture.width, texture.height);
         TextureScale.Bilinear(texture, texture.width / _CompressRate, texture.height / _CompressRate);
         // ���Ɉ��k(�c���E����������Ǝg���Ȃ��ꍇ������悤�ł��B) -> https://forum.unity.com/threads/strange-error-message-miplevel-m_mipcount.441907/
         //texture.Compress(false);
         // Sprite�ɕϊ����Ďg�p����
+
         texture2 = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
         output.overrideSprite = texture2;
+        
+        Debug.Log("2banme?");
 
-        // Debug.Log(ssImage.texture2.texture.EncodeToPNG());
+        
+
     }
 }
 
@@ -75,5 +95,6 @@ public static class TextureCompressionRate
             else return 1;
         }
         else return 1;
+        Debug.Log("4banme");
     }
 }
