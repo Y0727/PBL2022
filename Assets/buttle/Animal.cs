@@ -37,10 +37,7 @@ public class Animal : MonoBehaviour {
         }
         
 	}
-    private void OnBecameInvisible() {
-        moving.isMove = false;
-        Destroy(this.gameObject);
-    }
+
 }
 
 /// <summary>
