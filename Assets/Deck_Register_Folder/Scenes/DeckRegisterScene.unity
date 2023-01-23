@@ -1394,6 +1394,7 @@ GameObject:
   - component: {fileID: 1126125110}
   - component: {fileID: 1126125109}
   - component: {fileID: 1126125108}
+  - component: {fileID: 1126125111}
   m_Layer: 5
   m_Name: Home_Button
   m_TagString: Untagged
@@ -1466,7 +1467,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1163872847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1126125111}
+        m_TargetAssemblyTypeName: TitleScreenTransition, Assembly-CSharp
+        m_MethodName: OnClickHomeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1126125109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,6 +1518,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126125106}
   m_CullTransparentMesh: 1
+--- !u!114 &1126125111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126125106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3a84bd55e814d4fa21337fe1b5181d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1163872845
 GameObject:
   m_ObjectHideFlags: 0
