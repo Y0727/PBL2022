@@ -18,12 +18,11 @@ public class To_Game : MonoBehaviour
     {
         
     }
-  
+
     //押されたときに遷移するやつ
     public void ToGame()
     {
-        for(int i=0;i<=5;i++){
-            //image[1].rectTransform.rect.width;
+        for(int i=0; i<=5; i++){
             Sprite sprite_t = Resources.Load<Sprite>("a_test"+i.ToString()) as Sprite;
             GameObject test = new GameObject("test"+i.ToString());
             test.AddComponent<SpriteRenderer>();
@@ -31,21 +30,13 @@ public class To_Game : MonoBehaviour
             test.AddComponent<PolygonCollider2D>();
             test.AddComponent<Rigidbody2D>();
             test.AddComponent<Animal>();
-            //test.GetComponent<Image>
+
             float width = test.GetComponent<SpriteRenderer>().bounds.size.x;
             float height = test.GetComponent<SpriteRenderer>().bounds.size.y;
 
-            while(width > 1.8f | height > 1.8f){
-                
-                width= width/2.0f;
-                
-                height=height/2.0f;
-                
+            if(width > 1.8f || height > 1.8f){
+                test.transform.localScale = Vector3.one * 0.25f;
             }
-            
-            print(width);
-            print(height);
-            test.transform.localScale = new Vector3 (width, height);
             
             string localPath = "Assets/Deck_Register_Folder/Resources/" + test.name + ".prefab";
             PrefabUtility.SaveAsPrefabAsset(test, localPath);
